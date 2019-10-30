@@ -1,5 +1,7 @@
 'use strict'
 
 module.exports = function (message) {
-  alert(`Welcome ${message}`);
+
+  alert(process.env.USER);
+  alert(`Welcome 555 ${message}`);
 };

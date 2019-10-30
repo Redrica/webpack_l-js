@@ -9,3 +9,4 @@ welcome('home');
 exports.welcome = welcome;
 // такой вариант работает в другой сборке
 //export {welcome}
+

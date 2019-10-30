@@ -17,7 +17,10 @@
   },
   "homepage": "https://github.com/Redrica/webpack_l-js#readme",
   "dependencies": {
-    "webpack": "^4.41.2",
+    "node-static": "^0.7.11",
+    "webpack": "^4.41.2"
+  },
+  "devDependencies": {
     "webpack-cli": "^3.3.9"
   }
 }
