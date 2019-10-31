@@ -1,7 +1,7 @@
 'use strict';
 // этот модуль home подключает модуль welcome
 
-let welcome = require('./welcome');
+import welcome from './welcome';
 
 welcome('home');
 
