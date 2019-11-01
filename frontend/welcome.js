@@ -1,6 +1,7 @@
 'use strict';
 
 let someString = 'Some string';
+console.log(someString);
 
 export default function (message) {
     console.log(process.env.NODE_ENV);

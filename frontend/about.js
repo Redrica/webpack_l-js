@@ -3,9 +3,8 @@
 
 import welcome from './welcome';
 
-welcome('about about abooooout meeee!');
+//welcome('about about abooooout meeee!');
+export {welcome};
 
-// работает тут, но не работает в другой сборке
-exports.welcome = welcome;
-// такой вариант работает в другой сборке
-//export {welcome}
+let someFunkAbout = () => console.log(new Date());
+someFunkAbout();

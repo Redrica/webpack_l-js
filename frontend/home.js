@@ -3,10 +3,14 @@
 
 import welcome from './welcome';
 
-welcome('home');
+//welcome('home');
 
-// работает тут, но не работает в другой сборке
-exports.welcome = welcome;
-// такой вариант работает в другой сборке
-//export {welcome}
+// ↓ работает в отсутствие babel [предположение!]
+// exports.welcome = welcome;
+
+// ↓ если установлен babel [предположение!]
+export {welcome};
+
+let someFunkHome = () => console.log(new Date().toDateString());
+someFunkHome();
 
