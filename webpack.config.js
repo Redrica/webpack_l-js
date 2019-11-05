@@ -18,6 +18,11 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 // либо const NODE_ENV получает значение development и через DefinePlugin уставливает process.env.NODE_ENV. Вроде бы так.
 
 module.exports = {
+    // эта опция указывает WP использовать встроеную оптимизацию (некоторые предварительные настройки), а также активирует некоторые плагины.
+    // 'development' также устанавливает process.env.NODE_ENV в значение 'development', 'production' – в 'production'.
+    // если мы хотим иметь разное поведение конфига в зависимости от значения mode, то надо экспортироватьт не объект конфига, а функцию:
+    // var config = { entry: './app.js', … };
+    // module.exports = (env, argv) => { if (argv.mode === 'development') { config.devtool = 'source-map'; } … return config }
     mode: 'development',
 
     // можно установить "базовую директорию" для поиска файлов, чтобы каждый раз не прописывать путь, подходит для случая, когда всё лежит в одном месте.
@@ -67,6 +72,7 @@ module.exports = {
         //      NODE_ENV: 'development'
         // }),
 
+        // в случае установки mode нам уже не нужно дополнительно задавать NODE_ENV.
         // чтобы передавать "наружу" именно переменную NODE_ENV - используем такой способ.
         // при этом мы И записываем значение в process.env.NODE_ENV И передаем его наружу в виде переменной NODE_ENV
         new webpack.DefinePlugin({
